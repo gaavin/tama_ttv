@@ -1,0 +1,2 @@
+username: str = ""
+password: str = ""

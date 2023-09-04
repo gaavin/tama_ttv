@@ -1,4 +1,3 @@
-import asyncio
 import irc
 import time
 

@@ -1,11 +1,12 @@
 import asyncio
+import credentials
 import irc
 from tama import Tama
 from serial import Serial
 
 # https://twitchapps.com/tmi/
-IRC_USERNAME = ""
-IRC_PASSWORD = ""
+IRC_USERNAME: str = credentials.username
+IRC_PASSWORD: str = credentials.password
 
 class Client(irc.Client):
     def __init__(self, endpoint):
@@ -20,7 +21,7 @@ class Client(irc.Client):
 client = Client(irc.Endpoint(host="irc.chat.twitch.tv", port=6697, ssl=True))
 credentials = irc.Credentials(username=IRC_USERNAME, password=IRC_PASSWORD)
 
-tama = Tama("COM3", 115200)
+tama = Tama("/dev/ttyACM0", 115200)
 
 def clear_votes() -> None:
     client.users = []

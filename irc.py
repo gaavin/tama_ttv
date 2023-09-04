@@ -1,5 +1,4 @@
 import asyncio
-import inspect
 
 from irc_dataclasses import *
 from protocol import Protocol
